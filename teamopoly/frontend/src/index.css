@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== scroll + flex fixes ===== */
+@layer base {
+  /* Give the app a height context so inner flex kids can shrink & scroll */
+  html, body, #root {
+    height: 100%;
+  }
+
+  /* Prevent long text from forcing columns wider than the lane */
+  * {
+    min-width: 0;
+  }
+}
+
+@layer utilities {
+  /* Smooth iOS scrolling for overflow panes */
+  .ios-smooth {
+    -webkit-overflow-scrolling: touch;
+  }
+}
